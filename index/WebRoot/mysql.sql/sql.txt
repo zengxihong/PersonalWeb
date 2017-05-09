@@ -16,7 +16,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2017-05-09 15:25:28
+Date: 2017-05-09 21:32:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,5 +29,16 @@ CREATE TABLE `msg` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `msg` varchar(1000) DEFAULT NULL,
+  `time` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for re_msg
+-- ----------------------------
+DROP TABLE IF EXISTS `re_msg`;
+CREATE TABLE `re_msg` (
+  `id` int(11) NOT NULL,
+  `msg_id` int(11) DEFAULT NULL,
+  `msg` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -22,14 +22,19 @@
     </action>  
 </package>
 <package name="login" namespace="/login" extends="struts-default,json-default">
-	
-		 <action name="postInfo" class="com.action.GetInfoAction"  method="postInfo">
+	 <action name="postInfo" class="com.action.GetInfoAction"  method="postInfo">
          <result type="json">
          <param name="root">result</param>
          </result>  
 		</action>
+	
+		 <action name="GetMsg" class="com.action.GetInfoAction"  method="GetMsg">
+         <result type="json">
+         <param name="root">re</param>
+         </result>  
+		</action>
 		</package>
-
+ 
 
 
 </struts>

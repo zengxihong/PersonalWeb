@@ -28,8 +28,8 @@ function MessageSubmit(){
 		$("#name").val("不愿透露姓名的小哥哥/小姐姐~");
 
 	if($.trim($("#message").val())!=""){
-		
-		$.post("./login/postInfo.action",{name:$.trim($("#name").val()),msg:$.trim($("#message").val())},function(data){
+		var time=new Date();
+		$.post("./login/postInfo.action",{name:$.trim($("#name").val()),msg:$.trim($("#message").val()),time:time.toLocaleString()},function(data){
 			alert(data);
 			
 		},"json");
@@ -39,4 +39,8 @@ function MessageSubmit(){
 
 		alert("写点意见咯！");
 	}
+}
+function view(){
+
+	location.href="./msg.html";
 }
