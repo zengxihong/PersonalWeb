@@ -1,0 +1,33 @@
+数据库名：emiya
+用户名：root
+密码：admin
+表名：msg
+
+脚本：
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : z
+Source Server Version : 50624
+Source Host           : localhost:3306
+Source Database       : emiya
+
+Target Server Type    : MYSQL
+Target Server Version : 50624
+File Encoding         : 65001
+
+Date: 2017-05-09 15:25:28
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for msg
+-- ----------------------------
+DROP TABLE IF EXISTS `msg`;
+CREATE TABLE `msg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `msg` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;

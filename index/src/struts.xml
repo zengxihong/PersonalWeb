@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+    <!-- 这项配置表示是否启动动态方法调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 这项配置表示是否启用开发者模式，开发者模式的好处可以自动部署代码的修改，方便调试 -->
+    <constant name="struts.devMode" value="false" />
+       <!--上传文件选的文件最大50M -->
+    <constant name="struts.multipart.maxSize" value="52428800"/>
+    
+<package name="default" namespace="/" extends="struts-default">
+
+    <!-- 配置默认action -->
+    <default-action-ref name="index" />
+    <action name="index">
+        <result>/index.html</result>
+    </action>  
+</package>
+<package name="login" namespace="/login" extends="struts-default,json-default">
+	
+		 <action name="postInfo" class="com.action.GetInfoAction"  method="postInfo">
+         <result type="json">
+         <param name="root">result</param>
+         </result>  
+		</action>
+		</package>
+
+
+
+</struts>
